@@ -1,16 +1,20 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
 }
 
 html {
     height: 100%;
 }
+
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.2rem;
-    min-height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.0rem;
+    min-height: auto;
+    margin:  0;
+    padding: 0;
+
 }
 
 .contenedor * {
@@ -20,63 +24,65 @@ body {
     text-align: center;
 }
 
-.header {
-    grid-area: "header";
-    background-color: rgb(55, 172, 172);
+h1 {
+    margin: auto;
+    padding: auto;
+    height: auto;
 }
 
-.navbar {
-    grid-area: "navbar";
-    background-color: rgb(165, 42, 42);
-}
-
-.sidebar {
-    grid-area: "sidebar";
-    background-color: rgb(62, 11, 243);
+img {
+    margin: auto;
+    padding: auto;
+    height: auto;
 }
 
 .main {
     grid-area: "main";
-    background-color: rgb(14, 161, 14);
+    background-color: rgba(64, 80, 172, 0.664);
+    margin: 5px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 290px;
+    height: 1000px;
+    padding: 2px;
+}
+
+h2 {
+    background-color: blue;
+    margin: auto;
+    padding: auto;
+    height: auto;
+}
+
+ul {
+    margin: auto;
+    padding: auto;
+    height: auto; 
+}
+
+li {
+    margin: auto;
+    padding: auto;
+    height: auto; 
 }
 
 .footer {
     grid-area: "footer";
-    background-color: rgb(182, 182, 16);
+    background-color: rgba(235, 235, 226, 0.678);
+    margin: 5px;
+    grid-column-start: 3;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 10;
+    width: 500px;
+    height: 1000px;
+    padding: 2px;
 }
 
 .contenedor {
     display: grid;
-    gap: 10px;
-    grid-template: 
-    "header"  100px
-    "navbar"  50px
-    "main"    auto
-    "sidebar" 100px 
-    "footer"  100px; /* pendiente para asignar areas relacionadas con la hoja de vida*/
-}
-
-@media (min-width: 600px) {
-    .contenedor{
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template: 
-          "header   header"  100px
-          "navbar   navbar"  50px
-          "sidebar  main"    auto 
-          "footer   footer"  100px /
-          200px     auto;
-    }
-}
-
-@media (min-width: 900px) {
-    .contenedor{
-        grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto 100px;
-        grid-template: 
-          "header   header  header"  100px
-          "navbar   main    sidebar" auto 
-          "footer   footer  footer"  100px /
-          200px     auto    200px;
-    }
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:repeat("main" 30% "footer" 70%);
 }
