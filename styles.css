@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+}
+
+.contenedor * {
+    box-shadow: 1px 1px 7px 0px rgb(0, 0, 0);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.header {
+    grid-area: "header";
+    background-color: rgb(55, 172, 172);
+}
+
+.navbar {
+    grid-area: "navbar";
+    background-color: rgb(165, 42, 42);
+}
+
+.sidebar {
+    grid-area: "sidebar";
+    background-color: rgb(62, 11, 243);
+}
+
+.main {
+    grid-area: "main";
+    background-color: rgb(14, 161, 14);
+}
+
+.footer {
+    grid-area: "footer";
+    background-color: rgb(182, 182, 16);
+}
+
+.contenedor {
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header"  100px
+    "navbar"  50px
+    "main"    auto
+    "sidebar" 100px 
+    "footer"  100px; /* pendiente para asignar areas relacionadas con la hoja de vida*/
+}
+
+@media (min-width: 600px) {
+    .contenedor{
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template: 
+          "header   header"  100px
+          "navbar   navbar"  50px
+          "sidebar  main"    auto 
+          "footer   footer"  100px /
+          200px     auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .contenedor{
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template: 
+          "header   header  header"  100px
+          "navbar   main    sidebar" auto 
+          "footer   footer  footer"  100px /
+          200px     auto    200px;
+    }
+}
